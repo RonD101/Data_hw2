@@ -1,0 +1,3 @@
+/Users/rond/OneDrive - Technion/רון ענן/טכניון/סמסטר ג/מבני נתונים/hw2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/rond/OneDrive - Technion/רון ענן/טכניון/סמסטר ג/מבני נתונים/hw2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/rond/OneDrive - Technion/רון ענן/טכניון/סמסטר ג/מבני נתונים/hw2/cmake-build-debug/CMakeFiles/hw2.dir
