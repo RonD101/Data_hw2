@@ -64,7 +64,7 @@ StatusType CoursesManager::AddClass(int courseID, int *classID) {
         return FAILURE;
 
     temp_course->lectures.push_back(0);
-    *classID = temp_course->lectures.size() - 1;
+    *classID = temp_course->lectures.quantity() - 1;
     return SUCCESS;
 }
 

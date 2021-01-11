@@ -24,6 +24,7 @@ int main() {
     cm.TimeViewed(234247,0,&time_viewed);
     cm.GetIthWatchedClass(0,&course_num,&class_num);
     cm.GetIthWatchedClass(1,&course_num,&class_num);
+    cout << "Course: " << course_num << " Class: " << class_num << endl;
     cm.GetIthWatchedClass(3,&course_num,&class_num);
     cm.GetIthWatchedClass(2,&course_num,&class_num);
 

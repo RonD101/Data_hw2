@@ -143,32 +143,86 @@ hw2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/build
 .PHONY : hw2/fast
 
-main.o: main.cpp.o
+CoursesManager.o: CoursesManager.cpp.o
 
-.PHONY : main.o
+.PHONY : CoursesManager.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/main.cpp.o
-.PHONY : main.cpp.o
+CoursesManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/CoursesManager.cpp.o
+.PHONY : CoursesManager.cpp.o
 
-main.i: main.cpp.i
+CoursesManager.i: CoursesManager.cpp.i
 
-.PHONY : main.i
+.PHONY : CoursesManager.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/main.cpp.i
-.PHONY : main.cpp.i
+CoursesManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/CoursesManager.cpp.i
+.PHONY : CoursesManager.cpp.i
 
-main.s: main.cpp.s
+CoursesManager.s: CoursesManager.cpp.s
 
-.PHONY : main.s
+.PHONY : CoursesManager.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/main.cpp.s
-.PHONY : main.cpp.s
+CoursesManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/CoursesManager.cpp.s
+.PHONY : CoursesManager.cpp.s
+
+library2.o: library2.cpp.o
+
+.PHONY : library2.o
+
+# target to build an object file
+library2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/library2.cpp.o
+.PHONY : library2.cpp.o
+
+library2.i: library2.cpp.i
+
+.PHONY : library2.i
+
+# target to preprocess a source file
+library2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/library2.cpp.i
+.PHONY : library2.cpp.i
+
+library2.s: library2.cpp.s
+
+.PHONY : library2.s
+
+# target to generate assembly for a file
+library2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/library2.cpp.s
+.PHONY : library2.cpp.s
+
+main2.o: main2.cpp.o
+
+.PHONY : main2.o
+
+# target to build an object file
+main2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/main2.cpp.o
+.PHONY : main2.cpp.o
+
+main2.i: main2.cpp.i
+
+.PHONY : main2.i
+
+# target to preprocess a source file
+main2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/main2.cpp.i
+.PHONY : main2.cpp.i
+
+main2.s: main2.cpp.s
+
+.PHONY : main2.s
+
+# target to generate assembly for a file
+main2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hw2.dir/build.make CMakeFiles/hw2.dir/main2.cpp.s
+.PHONY : main2.cpp.s
 
 # Help Target
 help:
@@ -179,9 +233,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... hw2"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... CoursesManager.o"
+	@echo "... CoursesManager.i"
+	@echo "... CoursesManager.s"
+	@echo "... library2.o"
+	@echo "... library2.i"
+	@echo "... library2.s"
+	@echo "... main2.o"
+	@echo "... main2.i"
+	@echo "... main2.s"
 .PHONY : help
 
 

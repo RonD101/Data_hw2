@@ -546,6 +546,9 @@ T AVLTree<T>::getIthElement(AVLNode<T>* root, int i) {
         return T();
     if(root->num_sub_tree < i)
         return T();
+    ///////to get the highest i  element
+    i = nodes_counter - i + 1;
+    //////
     AVLNode<T>* tmp = root;
     while (tmp){
         int left_sub_tree = 0;
