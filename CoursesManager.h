@@ -13,7 +13,6 @@ public:
     ~CoursesManager() = default;
     HashTable<Course> courses_hash;
     AVLTree<ViewData> watched_lecture_tree;
-    int lectures_counter = 0;
 
     StatusType AddCourse (int courseID);
 

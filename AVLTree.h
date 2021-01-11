@@ -36,6 +36,8 @@ public:
     AVLNode<T>* remove_node_with_two_child(AVLNode<T>* node, bool delete_node = true);
     AVLNode<T>* remove_root();
 
+    int get_nodes_counter() { return nodes_counter; }
+
 private:
     AVLNode<T>* my_root;
     int nodes_counter;
