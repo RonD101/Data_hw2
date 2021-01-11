@@ -35,11 +35,10 @@ int main() {
         tree.insert_value(i);
     }
 
-    for (int i = 20; i < 800; ++i) {
-        //int k = (i % 15) + i - 14 * 3;
+    for (int i = 0; i < 1999; ++i) {
         tree.delete_value(tree.get_root(), i);
     }
-
+    tree.insert_value(1);
     tree.in_order(tree.get_root());
     return 0;
 }
