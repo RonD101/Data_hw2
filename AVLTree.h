@@ -257,7 +257,6 @@ AVLNode<T>* AVLTree<T>::rotate_left(AVLNode<T>* current_node) {
     current_node->set_parent(new_root);
     AVLTree<T>::update_height_and_balanced(current_node);
     AVLTree<T>::update_num_sub(current_node);
-
     return new_root;
 }
 
@@ -315,8 +314,11 @@ bool AVLTree<T>::delete_value(AVLNode<T>* root, const T &value) {
     /// we need to roll and fix the tree;
 
     // Balance the tree.
-    while (temp_node)
+    while (temp_node) {
         temp_node = balance_sub_tree(temp_node);
+        update_num_sub(temp_node);
+    }
+
 
     return true; // removed succeed.
 }

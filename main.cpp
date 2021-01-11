@@ -30,12 +30,12 @@ int main() {
     arr.pop();
     cout << endl;*/
     AVLTree<int> tree;
-    for (int i = 0; i < 100; ++i) {
+    for (int i = 0; i < 2000; ++i) {
         //int k = (i % 15) + i - 14 * 3;
         tree.insert_value(i);
     }
 
-    for (int i = 2; i < 80; ++i) {
+    for (int i = 20; i < 800; ++i) {
         //int k = (i % 15) + i - 14 * 3;
         tree.delete_value(tree.get_root(), i);
     }
