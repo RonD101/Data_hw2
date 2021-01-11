@@ -1,12 +1,12 @@
 #include <iostream>
 #include "DynamicArray.h"
 #include "HashTable.h"
-
+#include "AVLTree.h"
 using std::cout;
 using std::endl;
 
 int main() {
-    DynamicArray<int> arr;
+    /*DynamicArray<int> arr;
     arr.push_back(2);
     arr.push_back(3);
     arr.push_back(4);
@@ -28,5 +28,18 @@ int main() {
     arr.pop();
     arr.pop();
     arr.pop();
+    cout << endl;*/
+    AVLTree<int> tree;
+    for (int i = 0; i < 100; ++i) {
+        //int k = (i % 15) + i - 14 * 3;
+        tree.insert_value(i);
+    }
+
+    for (int i = 2; i < 80; ++i) {
+        //int k = (i % 15) + i - 14 * 3;
+        tree.delete_value(tree.get_root(), i);
+    }
+
+    tree.in_order(tree.get_root());
     return 0;
 }
