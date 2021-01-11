@@ -196,6 +196,7 @@ template<class T>
         }
         T *temp_array = new T[a.size()];
         delete[] data;
+        current = a.current;
         for (int i = 0; i < a.size(); ++i) {
             try {
                 temp_array[i] = a[i];
@@ -207,7 +208,6 @@ template<class T>
         }
         data = temp_array;
         length = a.size();
-        current = a.current;
         return *this;
     }
 
@@ -218,7 +218,7 @@ template<class T>
 
     template<class T>
     T &DynamicArray<T>::operator[](int index) {
-        if (index < 0 || index >= this->current) {
+        if (index < 0 || index >= this->size()) {
             throw DynamicArray::BadAccess();
         }
         return data[index];
@@ -226,7 +226,7 @@ template<class T>
 
     template<class T>
     const T &DynamicArray<T>::operator[](int index) const {
-        if (index < 0 || index >= this->current) {
+        if (index < 0 || index >= this->size()) {
             throw DynamicArray::BadAccess();
         }
         return data[index];

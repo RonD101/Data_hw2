@@ -38,6 +38,8 @@ public:
 
     int get_nodes_counter() { return nodes_counter; }
 
+    T getIthElement(AVLNode<T>* root, int i);
+
 private:
     AVLNode<T>* my_root;
     int nodes_counter;
@@ -536,6 +538,28 @@ AVLNode<T>* AVLTree<T>::balance_sub_tree(AVLNode<T>* root) {
     root->set_balanced_factor(balance);
     root->set_height(max(get_tree_height(root->get_left()), get_tree_height(root->get_right())) + 1);
     return root->get_parent();
+}
+
+template<class T>
+T AVLTree<T>::getIthElement(AVLNode<T>* root, int i) {
+    if (root == nullptr)
+        return T();
+    if(root->num_sub_tree < i)
+        return T();
+    AVLNode<T>* tmp = root;
+    while (tmp){
+        int left_sub_tree = 0;
+        if(tmp->get_left() != nullptr)
+            left_sub_tree = tmp->get_left()->num_sub_tree;
+        if(i < left_sub_tree + 1)
+            tmp = tmp->get_left();
+        else if( i > left_sub_tree + 1){
+            tmp = tmp->get_right();
+            i = i - left_sub_tree - 1;
+        }else if( i == left_sub_tree + 1)
+            return  tmp->data;
+    }
+    return T();//will  not get to here
 }
 
 #endif // GENERIC_AVL_H

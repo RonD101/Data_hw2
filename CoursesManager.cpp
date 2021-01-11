@@ -73,11 +73,8 @@ StatusType CoursesManager::GetIthWatchedClass(int i, int* courseID, int* classID
     // there aren't enough watched lectures in the system!
     if(watched_lecture_tree.get_nodes_counter() < i)
         return FAILURE;
-    AVLNode<ViewData>* temp = watched_lecture_tree.get_root();
-    while(temp) {
-        if(watched_lecture_tree.calc_rank(watched_lecture_tree.get_root(), temp->data) == i) {
-            // how to implement??
-        }
-    }
+    ViewData temp = watched_lecture_tree.getIthElement(watched_lecture_tree.get_root(),i);
+    *courseID = temp.getCourse();
+    *classID = temp.getLecture();
     return SUCCESS;
 }
