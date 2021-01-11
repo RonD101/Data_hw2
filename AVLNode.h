@@ -1,6 +1,8 @@
 #ifndef AVLNODE_H
 #define AVLNODE_H
 
+#include <iostream>
+
 template <class T>
 class AVLNode {
 public:
