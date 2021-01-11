@@ -17,6 +17,7 @@ public:
     Node<T>* getNext() { return nextNode; }
     Node<T>* getPrev() { return prevNode; }
     T getData() { return data; }
+    T* getDataAddress() {return &data;}
     T setData(T new_data) { data = new_data; }
 };
 

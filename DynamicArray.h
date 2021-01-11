@@ -131,18 +131,18 @@
         if(current <= 0)
             return;
         current -= 1;
-        if(current < size()/2)
+        if(current < size()/(2 * EXPAND_FACTOR))
             shrink();
    }
 
     template<class T>
     void DynamicArray<T>::shrink() {
-        int new_size = size() / 2;
+        int new_size = size() / EXPAND_FACTOR;
         T* new_data = new T[new_size];
         for (int i = 0; i < new_size; ++i){
             new_data[i] = data[i];
         }
-        delete data;
+        delete[] data;
         data = new_data;
         length = new_size;
     }
@@ -154,7 +154,7 @@
         for (int i = 0; i < size(); ++i){
             new_data[i] = data[i];
         }
-        delete data;
+        delete[] data;
         data = new_data;
         length = new_size;
     }
