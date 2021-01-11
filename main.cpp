@@ -1,12 +1,11 @@
 #include <iostream>
 #include "DynamicArray.h"
-
+#include "HashTable.h"
 
 using std::cout;
 using std::endl;
 
 int main() {
-    cout <<" ashkara ron dahan fuck  GIt " << endl;
     DynamicArray<int> arr;
     arr.push_back(2);
     arr.push_back(3);
