@@ -24,6 +24,7 @@ public:
     AVLNode* get_parent() const { return parent; }
     AVLNode* get_right()  const { return right; }
     AVLNode* get_left()   const { return left; }
+
     static void update_height_and_balanced(AVLNode<T>* node) {
         if(node == nullptr)
             return;

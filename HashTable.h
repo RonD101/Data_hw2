@@ -116,7 +116,7 @@
 */
         //const T &operator[](int index) const;
 
-        void insert(T value);
+        bool insert(T value);
 
         T* search(T value);
 
@@ -230,13 +230,14 @@
     };
 
 template<class T>
-void HashTable<T>::insert(T value) {
+bool HashTable<T>::insert(T value) {
     if(search(value) != nullptr)
-        return;
+        return false;
     if(quantity == size())
         expand();
     data[value%size()].addAtStart(value);
     quantity += 1;
+    return true;
 }
 
 template<class T>

@@ -20,30 +20,32 @@ class AVLTree {
 public:
     explicit AVLTree() : my_root(nullptr), nodes_counter(0) {}
     ~AVLTree();
+
     AVLNode<T>* find_value(AVLNode<T>* root, const T& value) const;
-    bool delete_value(AVLNode<T>* root, const T &value);
     AVLNode<T>* get_root() const { return my_root; }
     AVLNode<T>* find_min(AVLNode<T>* root);
+    AVLNode<T>* insert_value(const T& value);
 
     void in_order (AVLNode<T>* root) const;
     int calc_rank(AVLNode<T>* root, const T& value) const;
-
-    AVLNode<T>* insert_value(const T& value);
-    void delete_node(AVLNode<T>* node);
-    AVLNode<T>* remove_root();
-    AVLNode<T>* balance_sub_tree(AVLNode<T>* root);
-    AVLNode<T>* remove_node_with_two_child(AVLNode<T>* node, bool delete_node = true);
     void update_sub_delete(AVLNode<T>* node);
+    AVLNode<T>* balance_sub_tree(AVLNode<T>* root);
+
+    bool delete_value(AVLNode<T>* root, const T &value);
+    void delete_node(AVLNode<T>* node);
+    AVLNode<T>* remove_node_with_two_child(AVLNode<T>* node, bool delete_node = true);
+    AVLNode<T>* remove_root();
 
 private:
     AVLNode<T>* my_root;
     int nodes_counter;
+    AVLNode<T>* insert_node(AVLNode<T>* root, const T& value, AVLNode<T>* new_node);
     AVLNode<T>* rotate_left (AVLNode<T>* current_node);
     AVLNode<T>* rotate_right(AVLNode<T>* current_node);
-    AVLNode<T>* insert_node(AVLNode<T>* root,const T& value, AVLNode<T>* new_node);
 
     int get_balance_factor(AVLNode<T>* current_node) const;
     int get_tree_height(AVLNode<T>* root) const;
+
     static void update_height_and_balanced(AVLNode<T>* node){
         if(node == nullptr)
             return;
@@ -111,12 +113,11 @@ AVLNode<T>* AVLTree<T>::insert_value(const T& value) {
     }
     else {
         auto node = find_value(my_root,value);
-        if(node != nullptr){
+        if(node != nullptr)
             return node;
-        }
         AVLNode<T>* new_node = new AVLNode<T>(value);
 
-        return (insert_node(my_root,value, new_node));
+        return (insert_node(my_root, value, new_node));
     }
 }
 
