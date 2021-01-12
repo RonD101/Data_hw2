@@ -159,8 +159,11 @@ AVLNode<T>* AVLTree<T>::insert_node(AVLNode<T>* root, const T& value, AVLNode<T>
     balance = get_tree_height(root->get_left()) - get_tree_height(root->get_right());
     root->set_balanced_factor(balance);
     root->set_height(max(get_tree_height(root->get_left()), get_tree_height(root->get_right())) + 1);
+
     new_node->set_height(max(get_tree_height(new_node->get_left()), get_tree_height(new_node->get_right())) + 1);
     new_node->set_balanced_factor(get_tree_height(new_node->get_left()) - get_tree_height(new_node->get_right()));
+    AVLTree<T>::update_num_sub(root);
+    AVLTree<T>::update_num_sub(new_node);
     return new_node;
 }
 
@@ -512,6 +515,9 @@ AVLNode<T>* AVLTree<T>::balance_sub_tree(AVLNode<T>* root) {
     balance = get_tree_height(root->get_left()) - get_tree_height(root->get_right());
     root->set_balanced_factor(balance);
     root->set_height(max(get_tree_height(root->get_left()), get_tree_height(root->get_right())) + 1);
+    AVLTree<T>::update_num_sub(root);
+    AVLTree<T>::update_num_sub(right);
+    AVLTree<T>::update_num_sub(left);
     return root->get_parent();
 }
 
@@ -519,7 +525,7 @@ template<class T>
 T AVLTree<T>::getIthElement(AVLNode<T>* root, int i) {
     if (root == nullptr)
         return T();
-    if(root->num_sub_tree < i)
+    if(root->num_sub_tree < i)////////////////
         return T();
     ///////to get the highest i  element
     i = nodes_counter - i + 1;
