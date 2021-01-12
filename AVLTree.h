@@ -251,6 +251,8 @@ AVLNode<T>* AVLTree<T>::rotate_left(AVLNode<T>* current_node) {
     current_node->set_parent(new_root);
     AVLTree<T>::update_height_and_balanced(current_node);
     AVLTree<T>::update_num_sub(current_node);
+    AVLTree<T>::update_height_and_balanced(new_root);
+    AVLTree<T>::update_num_sub(new_root);
     return new_root;
 }
 
@@ -278,6 +280,8 @@ AVLNode<T>* AVLTree<T>::rotate_right(AVLNode<T>* current_node) {
     current_node->set_parent(new_root);
     AVLTree<T>::update_height_and_balanced(current_node);
     AVLTree<T>::update_num_sub(current_node);
+    AVLTree<T>::update_height_and_balanced(new_root);
+    AVLTree<T>::update_num_sub(new_root);
     return new_root;
 }
 

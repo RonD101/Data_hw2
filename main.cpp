@@ -8,25 +8,31 @@ using std::endl;
 
 int main() {
 
-    CoursesManager cm;
-    int course_num;
-    int class_num;
-    int time_viewed;
-    cm.AddCourse(234218);
-    cm.AddCourse(234247);
-    cm.AddClass(234218, &class_num);
-    cm.AddClass(234218, &class_num);
-    cm.AddClass(234247, &class_num);
-    cm.AddClass(234123, &class_num);
-    cm.WatchClass(234218,1,10);
-    cm.TimeViewed(234218,1,&time_viewed);
-    cm.WatchClass(234247,0,20);
-    cm.TimeViewed(234247,0,&time_viewed);
-    cm.GetIthWatchedClass(0,&course_num,&class_num);
-    cm.GetIthWatchedClass(1,&course_num,&class_num);
-    cout << "Course: " << course_num << " Class: " << class_num << endl;
-    cm.GetIthWatchedClass(3,&course_num,&class_num);
-    cm.GetIthWatchedClass(2,&course_num,&class_num);
+    AVLTree<int> tree;
+    tree.insert_value(0);
+    tree.insert_value(1);
+    tree.insert_value(2);
+
+
+//    CoursesManager cm;
+//    int course_num;
+//    int class_num;
+//    int time_viewed;
+//    cm.AddCourse(234218);
+//    cm.AddCourse(234247);
+//    cm.AddClass(234218, &class_num);
+//    cm.AddClass(234218, &class_num);
+//    cm.AddClass(234247, &class_num);
+//    cm.AddClass(234123, &class_num);
+//    cm.WatchClass(234218,1,10);
+//    cm.TimeViewed(234218,1,&time_viewed);
+//    cm.WatchClass(234247,0,20);
+//    cm.TimeViewed(234247,0,&time_viewed);
+//    cm.GetIthWatchedClass(0,&course_num,&class_num);
+//    cm.GetIthWatchedClass(1,&course_num,&class_num);
+//    cout << "Course: " << course_num << " Class: " << class_num << endl;
+//    cm.GetIthWatchedClass(3,&course_num,&class_num);
+//    cm.GetIthWatchedClass(2,&course_num,&class_num);
 
     /*DynamicArray<int> arr;
     arr.push_back(2);
