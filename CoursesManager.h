@@ -6,7 +6,6 @@
 #include "Course.h"
 #include "ViewData.h"
 #include "HashTable.h"
-#include <memory>
 
 class CoursesManager {
 public:

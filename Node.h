@@ -1,5 +1,5 @@
-#ifndef HW1_NODE_H
-#define HW1_NODE_H
+#ifndef HW2_NODE_H
+#define HW2_NODE_H
 
 template<class T>
 class Node {
@@ -16,8 +16,8 @@ public:
     Node<T>* getPrev() { return prevNode; }
 
     T setData(T new_data)   { data = new_data; }
-    T* getDataAddress()     {return &data; }
+    T* getDataAddress()     { return &data; }
     T getData()             { return data; }
 };
 
-#endif //HW1_NODE_H
+#endif //HW2_NODE_H

@@ -3,11 +3,11 @@
 
 void *Init() {
     CoursesManager *DS = new CoursesManager ();
+    // ADD HANDLEING ERROR HERE.
     return (void*)DS;
 }
 
 StatusType AddCourse(void *DS, int courseID) {
-
     if(courseID <= 0 || DS == nullptr)
         return INVALID_INPUT;
     try {
@@ -32,7 +32,6 @@ StatusType AddClass(void* DS, int courseID, int* classID) {
 }
 
 StatusType RemoveCourse(void *DS, int courseID) {
-
     if(courseID <= 0 || DS == nullptr)
         return INVALID_INPUT;
     try {
@@ -45,7 +44,6 @@ StatusType RemoveCourse(void *DS, int courseID) {
 }
 
 StatusType TimeViewed(void *DS, int courseID, int classID, int *timeViewed) {
-
     if(classID < 0 || courseID <= 0 || DS == nullptr)
         return INVALID_INPUT;
     try {
@@ -58,7 +56,6 @@ StatusType TimeViewed(void *DS, int courseID, int classID, int *timeViewed) {
 }
 
 StatusType WatchClass(void *DS, int courseID, int classID, int time) {
-
     if(time <= 0 || classID < 0 || courseID <= 0 || DS == nullptr)
         return INVALID_INPUT;
     try {
@@ -71,7 +68,6 @@ StatusType WatchClass(void *DS, int courseID, int classID, int time) {
 }
 
 StatusType GetIthWatchedClass(void *DS, int i, int *courseID, int *classID) {
-
     if(i <= 0 || DS == nullptr)
         return INVALID_INPUT;
     try {
@@ -84,7 +80,6 @@ StatusType GetIthWatchedClass(void *DS, int i, int *courseID, int *classID) {
 }
 
 void Quit(void** DS) {
-
     delete static_cast<CoursesManager*>(*DS);
     *DS = nullptr;
 }

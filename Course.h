@@ -21,11 +21,11 @@ public:
         return (id > other.id);
     }
 
-    int operator%(int module) const {
+    int operator%(const int module) const {
         return id % module;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const Course& c){
+    friend std::ostream& operator<<(std::ostream& os, const Course& c) {
         os << "Course ID : " << c.id << std::endl;
         for(int i = 0; i < c.lectures.size(); i++)
             os << c.lectures[i] << std::endl;

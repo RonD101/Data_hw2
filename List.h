@@ -1,5 +1,5 @@
-#ifndef HW1_LIST_H
-#define HW1_LIST_H
+#ifndef HW2_LIST_H
+#define HW2_LIST_H
 
 #include "Node.h"
 
@@ -17,7 +17,6 @@ class List {
 
 template <class T>
 void List<T>::removeNode(Node<T> *node) {
-
     if(node == nullptr || head == nullptr)
         return;
     if(node == head) {
@@ -42,11 +41,10 @@ void List<T>::removeNode(Node<T> *node) {
 
 template<class T>
 Node<T>* List<T>::addNodeAfter(Node<T> *node,T data) {
-
     if (node == nullptr)
         return nullptr;
     auto* new_node = new Node<T>(data);
-    if(node->getNext() != nullptr){
+    if(node->getNext() != nullptr) {
         (node->getNext())->setPrev(new_node);
         new_node->setNext(node->getNext());
     }
@@ -57,7 +55,6 @@ Node<T>* List<T>::addNodeAfter(Node<T> *node,T data) {
 
 template<class T>
 void List<T>::addNodeBefore(Node<T> *node, T data) {
-
     if(node == nullptr)
         return;
     Node<T>* new_node = new Node<T>(data);
@@ -70,8 +67,7 @@ void List<T>::addNodeBefore(Node<T> *node, T data) {
 }
 
 template<class T>
-Node<T>* List<T>::addAtStart(T data)
-{
+Node<T>* List<T>::addAtStart(T data) {
     Node<T>* new_node = new Node<T>(data);
     if(head == nullptr) {
         head = new_node;
@@ -93,4 +89,4 @@ List<T>::~List() {
     }
 }
 
-#endif //HW1_LIST_H
+#endif //HW2_LIST_H

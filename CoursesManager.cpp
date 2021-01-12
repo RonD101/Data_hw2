@@ -9,11 +9,10 @@ StatusType CoursesManager::AddCourse(int courseID) {
 }
 
 StatusType CoursesManager::RemoveCourse(int courseID) {
-
     Course* course_to_remove = courses_hash.search(Course(courseID));
     if(course_to_remove == nullptr)
         return FAILURE;
-    for(int i = 0; i < course_to_remove->lectures.size(); i++) {
+    for(int i = 0; i < course_to_remove->lectures.quantity(); i++) {
         ViewData temp_lecture(courseID, i, course_to_remove->lectures[i]);
         watched_lecture_tree.delete_value(watched_lecture_tree.get_root(), temp_lecture);
     }
@@ -22,11 +21,10 @@ StatusType CoursesManager::RemoveCourse(int courseID) {
 }
 
 StatusType CoursesManager::WatchClass(int courseID, int classID, int time) {
-
     Course* temp_course = courses_hash.search(Course(courseID));
 
     // no class with this id in course.
-    if(temp_course != nullptr && (classID + 1 > temp_course->lectures.size()))
+    if(temp_course != nullptr && (classID + 1 > temp_course->lectures.quantity()))
         return INVALID_INPUT;
     // no course with this id.
     if(temp_course == nullptr)
@@ -43,10 +41,9 @@ StatusType CoursesManager::WatchClass(int courseID, int classID, int time) {
 }
 
 StatusType CoursesManager::TimeViewed(int courseID, int classID, int *timeViewed) {
-
     Course* temp_course = courses_hash.search(Course(courseID));
     // no class with such id.
-    if(temp_course != nullptr && classID + 1 > temp_course->lectures.size())
+    if(temp_course != nullptr && classID + 1 > temp_course->lectures.quantity())
         return INVALID_INPUT;
 
     // no course with such id.
@@ -69,11 +66,10 @@ StatusType CoursesManager::AddClass(int courseID, int *classID) {
 }
 
 StatusType CoursesManager::GetIthWatchedClass(int i, int* courseID, int* classID) {
-
     // there aren't enough watched lectures in the system!
     if(watched_lecture_tree.get_nodes_counter() < i)
         return FAILURE;
-    ViewData temp = watched_lecture_tree.getIthElement(watched_lecture_tree.get_root(),i);
+    ViewData temp = watched_lecture_tree.getIthElement(watched_lecture_tree.get_root(), i);
     *courseID = temp.getCourse();
     *classID = temp.getLecture();
     return SUCCESS;
